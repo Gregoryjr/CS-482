@@ -7,5 +7,5 @@ if con:
   classifier = pipeline("zero-shot-classification")
   res = classifier(text, cata = ["offensive"],)
   print(res)
-  st.button("submit")
+  st.write(res)
 
