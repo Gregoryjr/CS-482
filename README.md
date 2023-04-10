@@ -1,9 +1,9 @@
 ---
-title: {{title}}
-emoji: {{emoji}}
-colorFrom: {{colorFrom}}
-colorTo: {{colorTo}}
-sdk: {{sdk}}
+title: milestone2
+emoji: 👋
+colorFrom: blue
+colorTo: red
+sdk: streamlit
 sdk_version: {{sdkVersion}}
 app_file: app.py
 pinned: false
