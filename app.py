@@ -1,6 +1,6 @@
 import streamlit as st
 from transformers import pipeline 
-st.title("Milestone #2")
+st.title("Milestone #2 v2")
 text = st.text_input("write a statement")
 import streamlit as st
 
