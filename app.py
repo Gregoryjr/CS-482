@@ -2,7 +2,9 @@ import streamlit as st
 from transformers import pipeline 
 
 st.title("Milestone #2 offensive statement prediction with pre-trained models")
-text = st.text_input("Enter a statement")
+st.header("in the basic demo you can select a model to judge whether or not the text below is offensive")
+text = "The mail man looks dumb"
+st.write(text)
 
 options = ["zero-shot-classification", "cardiffnlp/twitter-roberta-base-offensive"]
 model = st.selectbox("Select a  pre-trained model", options)
