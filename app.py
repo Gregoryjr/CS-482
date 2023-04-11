@@ -4,15 +4,29 @@ st.title("Milestone #2 v2")
 text = st.text_input("write a statement")
 import streamlit as st
 
-options = ["zero-shot-classification", "nill", "nill3"]
+options = ["zero-shot-classification", "cardiffnlp/twitter-roberta-base-offensive", "nill3"]
 model = st.selectbox("Select an option", options)
 
 ##model = st.write("You selected:", selected_option)
 
 con = st.button("submit")
 if con:
-  classifier = pipeline(model)
-  res = classifier(text, candidate_labels= ["offensive"],)
-  print(res)
-  st.write(res)
+  if model == "zero-shot-classification":
+    classifier = pipeline(model)
+    res = classifier(text, candidate_labels= ["offensive"],)
+    print(res)
+    st.write(res)
+  
+  if model == "cardiffnlp/twitter-roberta-base-offensive":
+    
+
+    classifier = pipeline('text-classification', model='cardiffnlp/twitter-roberta-base-offensive', tokenizer='cardiffnlp/twitter-roberta-base-offensive')
+
+
+    result = offensive_classifier(text)
+
+    
+    print(f" score {result[0]['score']*100:.2f}% confidence.")
+   
+
 
