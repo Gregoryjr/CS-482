@@ -7,7 +7,7 @@ import streamlit as st
 options = ["zero-shot-classification", "cardiffnlp/twitter-roberta-base-offensive", "nill3"]
 model = st.selectbox("Select an option", options)
 
-##model = st.write("You selected:", selected_option)j
+##model = st.write("You selected:", selected_option)
 
 con = st.button("submit")
 if con:
