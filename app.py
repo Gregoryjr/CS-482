@@ -23,7 +23,7 @@ if con:
     classifier = pipeline('text-classification', model='cardiffnlp/twitter-roberta-base-offensive', tokenizer='cardiffnlp/twitter-roberta-base-offensive')
 
 
-    result = offensive_classifier(text)
+    result = classifier(text)
 
     
     print(f" score {result[0]['score']*100:.2f}% confidence.")
