@@ -1,7 +1,7 @@
 import streamlit as st
 from transformers import pipeline 
 
-st.title("Milestone #2")
+st.title("Milestone #2 offensive statement prediction")
 text = st.text_input("Enter a statement")
 
 options = ["zero-shot-classification", "cardiffnlp/twitter-roberta-base-offensive"]
