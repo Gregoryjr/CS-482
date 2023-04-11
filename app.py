@@ -2,19 +2,23 @@ import streamlit as st
 from transformers import pipeline 
 
 st.title("Milestone #2 v2")
-text = st.text_input("write a statement")
+text = st.text_input("Enter a statement")
 
-options = ["zero-shot-classification", "cardiffnlp/twitter-roberta-base-offensive", "nill3"]
-model = st.selectbox("Select an option", options)
+options = ["zero-shot-classification", "cardiffnlp/twitter-roberta-base-offensive"]
+model = st.selectbox("Select a model", options)
 
-con = st.button("submit")
+con = st.button("Submit")
 if con:
   if model == "zero-shot-classification":
     classifier = pipeline(model)
     res = classifier(text, candidate_labels=["offensive"])
-    st.write(res)
+    label = res['labels'][0]
+    score = res['scores'][0]
+    st.write(f"Prediction: {label}, Score: {score:.2f}")
   
   if model == "cardiffnlp/twitter-roberta-base-offensive":
     classifier = pipeline('text-classification', model='cardiffnlp/twitter-roberta-base-offensive', tokenizer='cardiffnlp/twitter-roberta-base-offensive')
     result = classifier(text)
-    st.write(f"Score: {result[0]['score']*100:.2f}% confidence")
+    label = result[0]['label']
+    score = result[0]['score']
+    st.write(f"Prediction: {label}, Score: {score:.2f}")
