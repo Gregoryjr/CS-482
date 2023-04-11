@@ -2,7 +2,13 @@ import streamlit as st
 from transformers import pipeline 
 st.title("Milestone #2")
 text = st.text_input("write a statement")
-model = st.text_input("pick a model to check the the above statement is offensive")
+import streamlit as st
+
+options = ["zero-shot-classification", "nill", "nill3"]
+selected_option = st.selectbox("Select an option", options)
+
+model = st.write("You selected:", selected_option)
+
 con = st.button("submit")
 if con:
   classifier = pipeline(model)
