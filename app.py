@@ -26,7 +26,7 @@ if con:
     result = classifier(text)
 
     
-    print(f" score {result[0]['score']*100:.2f}% confidence.")
+    st.writes(result[0]['score'])
    
 
 
