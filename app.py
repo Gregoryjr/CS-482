@@ -1,11 +1,11 @@
 import streamlit as st
 from transformers import pipeline 
 
-st.title("Milestone #2 offensive statement prediction")
+st.title("Milestone #2 offensive statement prediction with pre-trained models")
 text = st.text_input("Enter a statement")
 
 options = ["zero-shot-classification", "cardiffnlp/twitter-roberta-base-offensive"]
-model = st.selectbox("Select a model", options)
+model = st.selectbox("Select a  pre-trained model", options)
 
 con = st.button("Submit")
 if con:
