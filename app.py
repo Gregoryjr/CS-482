@@ -5,9 +5,9 @@ text = st.text_input("write a statement")
 import streamlit as st
 
 options = ["zero-shot-classification", "nill", "nill3"]
-selected_option = st.selectbox("Select an option", options)
+model = st.selectbox("Select an option", options)
 
-model = st.write("You selected:", selected_option)
+##model = st.write("You selected:", selected_option)
 
 con = st.button("submit")
 if con:
