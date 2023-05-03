@@ -38,3 +38,4 @@ if con:
       return probs.detach().numpy()[0]
     probs = classify_sentence(text)
     print(probs)
+    st.write(probs)
