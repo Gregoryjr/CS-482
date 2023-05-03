@@ -30,7 +30,7 @@ if con:
     tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased")
     model = AutoModelForSequenceClassification.from_pretrained("Greys/milestonemodel")
 
-    def classify_sentence(sentence):
+    def classify_sentence(text):
       inputs = tokenizer(sentence, return_tensors="pt")
       outputs = model(**inputs)
       probs = outputs.logits.softmax(dim=1)
