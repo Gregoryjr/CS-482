@@ -2,12 +2,12 @@ import streamlit as st
 from transformers import pipeline
 from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
-st.title("Milestone #2 offensive statement prediction with pre-trained models")
-st.write("in this basic demo you can select a model to judge whether or not the text below is offensive")
+st.title("Milestone #3 offensive statement prediction with pre-trained models")
+st.write("in this basic demo you can select a model to judge whether or not the text below is offensive and how it's offensive. the options are[toxic, severe_toxic, obscene, threat, insult, identity_hate]")
 text = "I Am going to attack you"
 st.write(text)
 
-options = ["zero-shot-classification", "cardiffnlp/twitter-roberta-base-offensive", "Greys/milestonemodel"]
+options = ["Greys/milestonemodel"]
 model = st.selectbox("Select a  pre-trained model", options)
 
 con = st.button("Submit")
