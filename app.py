@@ -30,7 +30,7 @@ if con:
   
     tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased")
     model = AutoModelForSequenceClassification.from_pretrained("Greys/milestonemodel")
-    my_list = ['toxic', 'severe_toxic', 'obscene', 'threat', 'insult', 'identity_hate']
+    my_list = [' ','toxic', 'severe_toxic', 'obscene', 'threat', 'insult', 'identity_hate']
   def classify_sentence(text):
     inputs = tokenizer(text, return_tensors="pt")
     outputs = model(**inputs)
