@@ -1,5 +1,6 @@
 import streamlit as st
-from transformers import pipeline 
+from transformers import pipeline
+from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
 st.title("Milestone #2 offensive statement prediction with pre-trained models")
 st.write("in this basic demo you can select a model to judge whether or not the text below is offensive")
