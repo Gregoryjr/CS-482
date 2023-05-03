@@ -3,7 +3,7 @@ from transformers import pipeline
 
 st.title("Milestone #2 offensive statement prediction with pre-trained models")
 st.write("in this basic demo you can select a model to judge whether or not the text below is offensive")
-text = "The mail man looks dumb"
+text = "The mail man looks super dumb"
 st.write(text)
 
 options = ["zero-shot-classification", "cardiffnlp/twitter-roberta-base-offensive"]
