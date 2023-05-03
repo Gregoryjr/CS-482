@@ -4,7 +4,7 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
 st.title("Milestone #2 offensive statement prediction with pre-trained models")
 st.write("in this basic demo you can select a model to judge whether or not the text below is offensive")
-text = "The mail man looks soo dumb"
+text = "The mail man looks s0oo dumb"
 st.write(text)
 
 options = ["zero-shot-classification", "cardiffnlp/twitter-roberta-base-offensive", "Greys/milestonemodel"]
@@ -38,16 +38,13 @@ if con:
     return probs.detach().numpy()[0]
   probs = classify_sentence(text)
   def find_largest_number(numbers):
-    if len(numbers) == 0:
-      print("List is empty.")
-      return None
-      max_num = numbers[0]
-      max_index = 0
-      for i in range(1, len(numbers)):
+    max_num = numbers[0]
+    max_index = 0
+    for i in range(1, len(numbers)):
         if numbers[i] > max_num:
-          max_num = numbers[i]
-          max_index = i
-      return max_index
+            max_num = numbers[i]
+            max_index = i
+    return max_index
 
   print(probs)    
   index = find_largest_number(probs)
