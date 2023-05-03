@@ -41,7 +41,6 @@ if con:
     if len(numbers) == 0:
       print("List is empty.")
       return None
-      
       max_num = numbers[0]
       max_index = 0
       for i in range(1, len(numbers)):
@@ -49,6 +48,7 @@ if con:
           max_num = numbers[i]
           max_index = i
       return max_index
+
   print(probs)    
   index = find_largest_number(probs)
   st.write(my_list[index])
