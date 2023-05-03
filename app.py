@@ -31,7 +31,7 @@ if con:
     model = AutoModelForSequenceClassification.from_pretrained("Greys/milestonemodel")
 
     def classify_sentence(text):
-      inputs = tokenizer(sentence, return_tensors="pt")
+      inputs = tokenizer(text, return_tensors="pt")
       outputs = model(**inputs)
       probs = outputs.logits.softmax(dim=1)
       return probs.detach().numpy()[0]
