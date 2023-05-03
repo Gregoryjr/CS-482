@@ -6,7 +6,7 @@ st.write("in this basic demo you can select a model to judge whether or not the 
 text = "The mail man looks dumb"
 st.write(text)
 
-options = ["zero-shot-classification", "cardiffnlp/twitter-roberta-base-offensive"]
+options = ["zero-shot-classification", "cardiffnlp/twitter-roberta-base-offensive", "Greys/milestonemodel"]
 model = st.selectbox("Select a  pre-trained model", options)
 
 con = st.button("Submit")
@@ -24,3 +24,16 @@ if con:
     label = result[0]['label']
     score = result[0]['score']
     st.write(f"Prediction: {label}, Score: {score*100}% chance")
+    
+  if model = "Greys/milestonemodel"
+  
+    tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased")
+    model = AutoModelForSequenceClassification.from_pretrained("Greys/milestonemodel")
+
+    def classify_sentence(sentence):
+      inputs = tokenizer(sentence, return_tensors="pt")
+      outputs = model(**inputs)
+      probs = outputs.logits.softmax(dim=1)
+      return probs.detach().numpy()[0]
+    probs = classify_sentence(text)
+    print(probs)
