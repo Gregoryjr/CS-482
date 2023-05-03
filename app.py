@@ -25,7 +25,7 @@ if con:
     score = result[0]['score']
     st.write(f"Prediction: {label}, Score: {score*100}% chance")
     
-  if model = "Greys/milestonemodel"
+  if model == "Greys/milestonemodel"
   
     tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased")
     model = AutoModelForSequenceClassification.from_pretrained("Greys/milestonemodel")
