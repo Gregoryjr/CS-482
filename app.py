@@ -36,7 +36,7 @@ if con:
     outputs = model(**inputs)
     probs = outputs.logits.softmax(dim=1)
     return probs.detach().numpy()[0]
-      probs = classify_sentence(text)
+  probs = classify_sentence(text)
   def find_largest_number(numbers):
     if not numbers:
       print("List is empty.")
