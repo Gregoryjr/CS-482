@@ -4,7 +4,7 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification
 
 st.title("Milestone #2 offensive statement prediction with pre-trained models")
 st.write("in this basic demo you can select a model to judge whether or not the text below is offensive")
-text = "The mail man looks s0oo dumb"
+text = "I Hate cocksuckers"
 st.write(text)
 
 options = ["zero-shot-classification", "cardiffnlp/twitter-roberta-base-offensive", "Greys/milestonemodel"]
