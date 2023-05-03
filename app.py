@@ -31,29 +31,19 @@ if con:
     tokenizer = AutoTokenizer.from_pretrained("distilbert-base-uncased")
     model = AutoModelForSequenceClassification.from_pretrained("Greys/milestonemodel")
     my_list = ['toxic', 'severe_toxic', 'obscene', 'threat', 'insult', 'identity_hate']
-    def classify_sentence(text):
-      inputs = tokenizer(text, return_tensors="pt")
-      outputs = model(**inputs)
-      probs = outputs.logits.softmax(dim=1)
-      return probs.detach().numpy()[0]
-    probs = classify_sentence(text)
     def find_largest_number(numbers):
-      if len(numbers) == 0:
+      if not numbers:
         print("List is empty.")
-      return None, None
-
+      return None
       max_num = numbers[0]
       max_index = 0
       for i in range(1, len(numbers)):
         if numbers[i] > max_num:
           max_num = numbers[i]
           max_index = i
-
-      return max_index
-
-
-    print(probs)
     
+      return max_index
+    print(probs)    
     index = find_largest_number(probs)
     st.write(my_list[index])
 #id,toxic,severe_toxic,obscene,threat,insult,identity_hate
